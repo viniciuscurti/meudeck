@@ -1,0 +1,12 @@
+<h1>Show</h1>
+
+<br>
+
+<ul>
+  <li><%= link_to card.name, card_path(card) %></li>
+  <li><%= card.description %></li>
+  <li><%= card.price %></li>
+  <li><%= card.user.username %></li>
+</ul>
+
+<%= link_to "Edit card.", edit_card_path %>

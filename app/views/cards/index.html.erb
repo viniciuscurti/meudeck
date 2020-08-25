@@ -1,0 +1,15 @@
+<h1>Index</h1>
+
+<br>
+
+<% @cards.each do |card| %>
+  <ul>
+    <li><%= link_to card.name, card_path(card) %></li>
+    <li><%= card.description %></li>
+    <li><%= card.price %></li>
+    <li><%= card.user.username %></li>
+  </ul>
+<% end %>
+
+
+<%= link_to "Create a new card.", new_card_path %>
