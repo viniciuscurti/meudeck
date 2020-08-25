@@ -1,0 +1,35 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 80px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #020202;
+}
+
+.footer-links{
+  position: absolute;
+  left: 10px;
+  bottom: 0px;
+  border-radius: 20%;
+  text-size-adjust: 15px;
+}
+.footer-copyright{
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  color:white;
+}
+.footer-copyright-avatar{
+  border-radius: 50%;
+  border-image-width: 15px;
+}
