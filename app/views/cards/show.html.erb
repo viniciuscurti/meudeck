@@ -1,0 +1,16 @@
+<h1>Show</h1>
+
+<br>
+
+<ul>
+  <li><%= @card.category %> </li>
+  <li><%= @card.name %></li>
+  <li><%= @card.description %></li>
+  <li><%= @card.price %></li>
+  <li><%= @card.user.username %></li>
+</ul>
+
+<%= link_to "Edit card", edit_card_path %>
+<br>
+<%= link_to "Back to cards", cards_path %>
+

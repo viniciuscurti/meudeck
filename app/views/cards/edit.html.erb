@@ -1,0 +1,11 @@
+<h1>Edit Card</h1>
+
+<%= simple_form_for(@card) do |f| %>
+<%= f.input :category %>
+<%= f.input :name %>
+<%= f.input :description %>
+<%= f.input :price %>
+<%= f.submit 'Submit', class: 'btn-primary' %>
+<% end %>
+
+<%= link_to "Back to card", card_path(@card) %>
