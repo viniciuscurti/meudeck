@@ -2,25 +2,25 @@ class OrdersController < ApplicationController
   before_action :set_card, only: :create
 
   def index
-    @orders = Order.where(current_user)
+    @orders = Order.where(user: current_user)
   end
 
   def create
-    @order = Order.new(order_params)
-    @order.card = @card
-    @order.user = current_user
-    @order.save
-
-    redirect_to orders_path
+    @order = Order.new
+    if @card.sold == false
+      @card.sell!
+      @order.card = @card
+      @order.user = current_user
+      @order.save
+      redirect_to orders_path, notice: "card was successfully bought"
+    else
+      redirect_to card_path(@card), alert: "card was already sold"
+    end
   end
 
   private
 
   def set_card
     @card = Card.find(params[:card_id])
-  end
-
-  def order_params
-    params.require(:order).permit(:price)
   end
 end
