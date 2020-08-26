@@ -4,7 +4,7 @@ class CardsController < ApplicationController
 
   def index
     @cards = Card.all
-    @cards = Card.where(category: params[:category])
+#     @cards = Card.where(category: params[:category])
   end
 
   def show
