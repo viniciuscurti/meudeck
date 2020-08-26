@@ -53,13 +53,13 @@
         <%= f.input :phone,
                     required: true %>
       </div>              
-      </div>
     </div>
+  </div>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>            
 
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up", class:"btn btn-primary" %>
   </div>
-<% end %>
-</div>
+  <% end %>
+

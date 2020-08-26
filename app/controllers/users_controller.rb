@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    p @user
     if @user.save
       redirect_to user_path(@user), notice: 'User has been successfully created!'
     else
