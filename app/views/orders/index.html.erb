@@ -4,9 +4,10 @@
 
 <% @orders.each do |order| %>
   <ul>
-    <li><%= order.user.username %></li>
-    <li><%= order.card.name %></li>
-    <li><%= order.card.price %></li>
+    <li>Buyer: <%= order.user.username %></li>
+    <li>Seller: <%= order.card.user.username %></li>
+    <li>Card Name: <%= order.card.name %></li>
+    <li>Price: <%= order.card.price %></li>
   </ul>
 <% end %>
 

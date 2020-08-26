@@ -2,15 +2,24 @@
 
 <br>
 
-<ul>
-  <li><%= @card.category %> </li>
-  <li><%= @card.name %></li>
-  <li><%= @card.description %></li>
-  <li><%= @card.price %></li>
-  <li><%= @card.user.email %></li>
-</ul>
+<div>
+  <p><%= @card.category %> </p>
+  <p><%= @card.name %></p>
+  <p><%= @card.description %></p>
+  <p><%= @card.price %></p>
+  <p><%= @card.user.email %></p>
+</div>
 
-<%= link_to "Edit card", edit_card_path %>
-<br>
-<%= link_to "Back to cards", cards_path %>
+<% if current_user == @card.user %>
+  <p><%= link_to "Edit card", edit_card_path %></p>
+  <p><%= link_to "Back to cards", cards_path %></p>
+<% elsif current_user == nil %>
+  <p><%= link_to "Back to cards", cards_path %></p>
+<% else %>
+  <%= simple_form_for [@card, @order] do |f| %>
+    <p><%= f.submit 'Buy!', class: 'btn-primary' %></p>
+    <p><%= link_to "Back to cards", cards_path %></p>
+  <% end %>
+<% end %>
+
 

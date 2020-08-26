@@ -6,7 +6,8 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = Order.new
+    @card.sold = true
     @order.card = @card
     @order.user = current_user
     @order.save
@@ -18,9 +19,5 @@ class OrdersController < ApplicationController
 
   def set_card
     @card = Card.find(params[:card_id])
-  end
-
-  def order_params
-    params.require(:order).permit(:price)
   end
 end
