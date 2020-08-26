@@ -24,7 +24,7 @@
   }
 }
 
-.btn-btn-link{
+.btn-btn-link {
   color: white;
   &:hover {
     color:#606597;
@@ -32,8 +32,9 @@
   }
 }
 
-.nav-item-dropdown{
-  position: absolute;
-  right: 15px;
-  top: 0;
+#nav-item {
+  list-style: none;
+  position: relative;
+  left: 68vw;
+  top: 7px;
 }
