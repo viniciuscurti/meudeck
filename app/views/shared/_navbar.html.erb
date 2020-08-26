@@ -17,24 +17,25 @@
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
         <div class="dropdown">
-        <button class="btn btn-link" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Cards
-        </button>
-        <div class="dropdown-menu cards" aria-labelledby="dropdownMenu2">
-          <button class="dropdown-item" type="button">Magic - The Gathering</button>
-          <button class="dropdown-item" type="button">Pokemon</button>
-          <button class="dropdown-item" type="button">Yu-gi-oh</button>
+          <button class="btn btn-link" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Cards
+          </button>
+          <div class="dropdown-menu cards" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="button">Magic - The Gathering</button>
+            <button class="dropdown-item" type="button">Pokemon</button>
+            <button class="dropdown-item" type="button">Yu-gi-oh</button>
+          </div>      
         </div>
-      </div>
-  </div>
-        <li class="nav-item dropdown">
-          <%= image_tag "dragon_logo", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
-            <%= link_to "Orders", "#", class: "dropdown-item" %>
-            <%= link_to "My Deck", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
+    </ul>
+    <ul>    
+          <li class="nav-item dropdown mr-auto" id="nav-item">
+            <%= image_tag "dragon_logo", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Orders", "#", class: "dropdown-item" %>
+              <%= link_to "My Deck", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
@@ -44,15 +45,15 @@
         </li>
         <li>
           <div class="dropdown">
-          <button class="btn btn-link" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Cards
-          </button>
-          <div class="dropdown-menu cards" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button">Magic - The Gathering</button>
-            <button class="dropdown-item" type="button">Pokemon</button>
-            <button class="dropdown-item" type="button">Yu-gi-oh</button>
+            <button class="btn btn-link" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cards
+            </button>
+            <div class="dropdown-menu cards" aria-labelledby="dropdownMenu2">
+              <button class="dropdown-item" type="button">Magic - The Gathering</button>
+              <button class="dropdown-item" type="button">Pokemon</button>
+              <button class="dropdown-item" type="button">Yu-gi-oh</button>
+            </div>
           </div>
-        </div>
         </li>
       <% end %>
     </ul>
