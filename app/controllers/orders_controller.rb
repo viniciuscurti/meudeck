@@ -1,39 +1,26 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:edit, :update, :destroy]
+  before_action :set_card, only: :create
 
-  def new
-    @order = Order.new
+  def index
+    @orders = Order.where(current_user)
   end
 
   def create
     @order = Order.new(order_params)
+    @order.card = @card
+    @order.user = current_user
     @order.save
-    #caminho
+
+    redirect_to orders_path
   end
 
-  def edit
+  private
+
+  def set_card
+    @card = Card.find(params[:card_id])
   end
 
-  def update
-    @order.update(order_params)
-    #caminho
+  def order_params
+    params.require(:order).permit(:price)
   end
-
-  def destroy
-    @order.destroy
-    #caminho
-  end
-
-end
-
-private
-
-def set_order
-  @card = Card.find(params[:id])
-end
-
-def order_params
-  params.require(:order).permit()
-end
-
 end

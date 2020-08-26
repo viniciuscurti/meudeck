@@ -6,14 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+
 Card.destroy_all
+User.destroy_all
 
 puts "Start"
 
-5.times do 
+5.times do
   user = User.create!(
-    username: Faker::Internet.username, 
+    username: Faker::Internet.username,
     email: Faker::Internet.email,
     password: Faker::Internet.password(min_length: 8),
     address: Faker::Address.street_name,
@@ -24,7 +25,7 @@ puts "Start"
     zip_code: Faker::Address.zip_code,
     phone: Faker::PhoneNumber.cell_phone
   )
-  5.times do 
+  5.times do
     Card.create!(
       name: Faker::Games::Pokemon.name,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. ",
