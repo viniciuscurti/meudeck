@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :set_card, only: :create
 
   def index
-    @orders = Order.where(current_user)
+    @orders = Order.where(user: current_user)
   end
 
   def create
