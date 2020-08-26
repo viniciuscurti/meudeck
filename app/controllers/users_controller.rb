@@ -13,6 +13,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user), notice: 'User has been successfully created!'
     else
       render :new
+    end
   end
 
   def edit
