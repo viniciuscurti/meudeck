@@ -7,12 +7,15 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new
-    @card.sold = true
-    @order.card = @card
-    @order.user = current_user
-    @order.save
-
-    redirect_to orders_path
+    if @card.sold == false
+      @card.sell!
+      @order.card = @card
+      @order.user = current_user
+      @order.save
+      redirect_to orders_path, notice: "card was successfully bought"
+    else
+      redirect_to card_path(@card), alert: "card was already sold"
+    end
   end
 
   private

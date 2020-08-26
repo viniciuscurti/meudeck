@@ -3,12 +3,17 @@
 <br>
 
 <% @orders.each do |order| %>
-  <ul>
-    <li>Buyer: <%= order.user.username %></li>
-    <li>Seller: <%= order.card.user.username %></li>
-    <li>Card Name: <%= order.card.name %></li>
-    <li>Price: <%= order.card.price %></li>
-  </ul>
+
+  <div class="card">
+    <h5 class="card-header">Card Name: <%= order.card.name %></h5>
+    <div class="card-body">
+      <p class="card-text">Buyer: <%= order.user.username %></p>
+      <p class="card-text">Seller: <%= order.card.user.username %></p>
+      <p class="card-text">Price: <%= order.card.price %></p>
+      <p> <%= link_to "See Card's details", card_path(order.card), class: "btn btn-primary" %></p>
+    </div>
+  </div>
+  <br>
 <% end %>
 
 

@@ -12,6 +12,7 @@
 
 <% if current_user == @card.user %>
   <p><%= link_to "Edit card", edit_card_path %></p>
+  <p><%= link_to "DELETE CARD", card_path(@card), method: :delete, data: { confirm: 'Are you sure?' } %></p>
   <p><%= link_to "Back to cards", cards_path %></p>
 <% elsif current_user == nil %>
   <p><%= link_to "Back to cards", cards_path %></p>
