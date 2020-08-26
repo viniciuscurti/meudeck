@@ -1,6 +1,6 @@
 .navbar-lewagon {
   background: #1B272C;
-  height: 100px;
+  height: 80px;
   position: relative;
 }
 
@@ -9,8 +9,9 @@
 }
 
 .navbar-lewagon .navbar-brand {
-  width: 60px;
+  width: 55px;
   border-radius: 50%;
+  left: 10px;
 }
 
 .nav-link {
@@ -23,3 +24,16 @@
   }
 }
 
+.btn-btn-link{
+  color: white;
+  &:hover {
+    color:#606597;
+    font-weight: bold;
+  }
+}
+
+.nav-item-dropdown{
+  position: absolute;
+  right: 15px;
+  top: 0;
+}
