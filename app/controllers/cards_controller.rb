@@ -3,8 +3,13 @@ class CardsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @cards = Card.all
-#     @cards = Card.where(category: params[:category])
+    if params[:category]
+      @cards = Card.where(category: params[:category])
+    elsif params[:id]
+      @cards = Card.where(user_id: params[:id])
+    else
+      @cards = Card.all
+    end
   end
 
   def show

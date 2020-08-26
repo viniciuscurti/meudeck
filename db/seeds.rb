@@ -29,6 +29,7 @@ puts "Start"
     Card.create!(
       name: Faker::Games::Pokemon.name,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. ",
+      category: ['Magic', 'Pokemon', 'Yu-Gi-Oh'].sample,
       price: rand(1..100),
       user: user
     )
