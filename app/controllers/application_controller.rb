@@ -1,9 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  before_action :configure_sign_up_params, only: [:create]
-  protected 
-  def configure_sign_up_params
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  def configure_permitted_parameters
+    # For additional fields in app/views/devise/registrations/new.html.erb
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :address, :address_number,
-      :address_complement, :city, :country, :zip_code, :phone, :remember_me])
+                                      :address_complement, :city, :country, :zip_code, :phone])
+    # For additional in app/views/devise/registrations/edit.html.erb
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :address, :address_number,
+                                      :address_complement, :city, :country, :zip_code, :phone])
   end
 end
