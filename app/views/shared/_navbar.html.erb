@@ -51,9 +51,10 @@
                 Cards
             </button>
             <div class="dropdown-menu cards" aria-labelledby="dropdownMenu2">
-              <button class="dropdown-item" type="button">Magic - The Gathering</button>
-              <button class="dropdown-item" type="button">Pokemon</button>
-              <button class="dropdown-item" type="button">Yu-gi-oh</button>
+              <button class="dropdown-item" type="button"><%= link_to 'Magic - The Gathering', cards_path(category: 'Magic') %></button>
+              <button class="dropdown-item" type="button"><%= link_to 'Pokemon', cards_path(category: 'Pokemon') %></button>
+              <button class="dropdown-item" type="button"><%= link_to 'Yu-gi-oh', cards_path(category: 'Yu-Gi-Oh') %></button>
+              <button class="dropdown-item" type="button"><%= link_to 'All cards', cards_path %></button>
             </div>
           </div>
         </li>
