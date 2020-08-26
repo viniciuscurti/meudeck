@@ -1,0 +1,14 @@
+<h1>Orders Index</h1>
+
+<br>
+
+<% @orders.each do |order| %>
+  <ul>
+    <li><%= order.user.username %></li>
+    <li><%= order.card.name %></li>
+    <li><%= order.card.price %></li>
+  </ul>
+<% end %>
+
+
+<%= link_to "Back to cards", cards_path %>
