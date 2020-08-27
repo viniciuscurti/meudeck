@@ -54,5 +54,5 @@ def set_card
 end
 
 def card_params
-  params.require(:card).permit(:category, :name, :description, :price)
+  params.require(:card).permit(:category, :name, :description, :price, :photo)
 end
