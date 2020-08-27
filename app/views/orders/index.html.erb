@@ -4,16 +4,21 @@
 
 <% @orders.each do |order| %>
 
-  <div class="card">
-    <h5 class="card-header">Card Name: <%= order.card.name %></h5>
-    <div class="card-body">
-      <p class="card-text">Buyer: <%= order.user.username %></p>
-      <p class="card-text">Seller: <%= order.card.user.username %></p>
-      <p class="card-text">Price: <%= order.card.price %></p>
-      <p> <%= link_to "See Card's details", card_path(order.card), class: "btn btn-primary" %></p>
+  <div class="order-card">
+    <div class="card-left">
+      <%= cl_image_tag order.card.photo.key, crop: :fill %>
+    </div>
+    <div class ="card-right">
+      <h1>Card Name: <%= order.card.name %></h1>
+      <div>
+        <p>Buyer: <%= order.user.username %></p>
+        <p>Seller: <%= order.card.user.username %></p>
+        <p>Price: <%= order.card.price %></p>
+        <br>
+        <p><%= link_to "See Card's details", card_path(order.card), class: "card-button" %></p>
+      </div>
     </div>
   </div>
-  <br>
 <% end %>
 
 
