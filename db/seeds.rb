@@ -6,14 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "open-uri"
+
+
 Order.destroy_all
 Card.destroy_all
 User.destroy_all
 
+
 puts "Start"
 
+
 5.times do
-  user = User.create!(
+  sleep(1)
+  file = URI.open('https://source.unsplash.com/300x300/?face')
+  user = User.new(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
     password: Faker::Internet.password(min_length: 8),
@@ -25,14 +32,21 @@ puts "Start"
     zip_code: Faker::Address.zip_code,
     phone: Faker::PhoneNumber.cell_phone
   )
+  user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  user.save!
+
   5.times do
-    Card.create!(
+    sleep(1)
+    file = URI.open('https://source.unsplash.com/600x600/?superhero')
+    card = Card.new(
       name: Faker::Games::Pokemon.name,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. ",
       category: ['Magic', 'Pokemon', 'Yu-Gi-Oh'].sample,
       price: rand(1..100),
       user: user
     )
+    card.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+    card.save!
   end
 end
 

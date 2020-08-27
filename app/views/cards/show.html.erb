@@ -2,14 +2,18 @@
 
 <br>
 
-<div>
-  <%= cl_image_tag @card.photo.key, height: 300, width: 400, crop: :fill %>
-  <p><%= @card.category %></p>
-  <p><%= @card.name %></p>
-  <p><%= @card.description %></p>
-  <p><%= @card.price %></p>
-  <p><%= @card.user.username %></p>
-</div>
+  <div class="order-card d-flex justify-content-center">
+    <div class="card-left">
+      <%= cl_image_tag @card.photo.key, crop: :fill %>
+    </div>
+    <div class ="card-right">
+      <h1><%= @card.name %></h1>
+      <p><%= @card.category %></p>
+      <p><%= @card.description %></p>
+      <p><%= @card.price %></p>
+      <p><%= @card.user.username %></p>
+    </div>
+  </div>
 
 <% if current_user == @card.user %>
   <p><%= link_to "Edit card", edit_card_path %></p>
