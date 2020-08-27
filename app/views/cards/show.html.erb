@@ -1,13 +1,14 @@
-<h1>Show</h1>
+<h1 class="mt-4">Show</h1>
 
 <br>
 
 <div>
-  <p><%= @card.category %> </p>
+  <%= cl_image_tag @card.photo.key, height: 300, width: 400, crop: :fill %>
+  <p><%= @card.category %></p>
   <p><%= @card.name %></p>
   <p><%= @card.description %></p>
   <p><%= @card.price %></p>
-  <p><%= @card.user.email %></p>
+  <p><%= @card.user.username %></p>
 </div>
 
 <% if current_user == @card.user %>
