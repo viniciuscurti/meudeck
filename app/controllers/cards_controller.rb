@@ -5,10 +5,13 @@ class CardsController < ApplicationController
   def index
     if params[:category]
       @cards = Card.where(category: params[:category])
+      @category = "#{params[:category].capitalize}'s Cards"
     elsif params[:id]
       @cards = Card.where(user_id: params[:id])
+      @category = "My Cards"
     else
       @cards = Card.all
+      @category = "All Cards"
     end
   end
 
