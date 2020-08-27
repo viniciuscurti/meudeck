@@ -10,21 +10,22 @@
       <h1><%= @card.name %></h1>
       <p><%= @card.category %></p>
       <p><%= @card.description %></p>
-      <p><%= @card.price %></p>
+      <p><%= humanized_money_with_symbol(@card.price) %></p>
       <p><%= @card.user.username %></p>
     </div>
   </div>
 
 <% if current_user == @card.user %>
-  <p><%= link_to "Edit card", edit_card_path %></p>
-  <p><%= link_to "DELETE CARD", card_path(@card), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  <p><%= link_to "Back to cards", cards_path %></p>
+  <p><%= link_to "Edit card", edit_card_path, class: "btn btn-primary" %></p>
+  <p><%= link_to "Delete card", card_path(@card), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %></p>
+  <p><%= link_to "Back to cards", cards_path, class: "btn btn-primary" %></p>
 <% elsif current_user == nil %>
-  <p><%= link_to "Back to cards", cards_path %></p>
+  <p><%= link_to "Back to cards", cards_path, class: "btn btn-primary" %></p>
 <% else %>
   <%= simple_form_for [@card, @order] do |f| %>
-    <p><%= f.submit 'Buy!', class: 'btn-primary' %></p>
-    <p><%= link_to "Back to cards", cards_path %></p>
+    <p><%= hidden_field_tag 'card_id', @card.id %>
+    <p><%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+    <p><%= link_to "Back to cards", cards_path, class: "btn btn-primary" %></p>
   <% end %>
 <% end %>
 

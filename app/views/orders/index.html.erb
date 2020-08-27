@@ -6,7 +6,6 @@
 
     <br>
     <% @orders.each do |order| %>
-
       <div class="index-card">
         <div class="card-left">
           <%= cl_image_tag order.card.photo.key, crop: :fill %>
@@ -19,6 +18,7 @@
             <p>Price: <%= order.card.price %></p>
             <br>
             <p><%= link_to "See Card's details", card_path(order.card), class: "card-button" %></p>
+            <p><%= link_to "See Order's details", card_order_path(order.card, order), class: "card-button" %></p>
           </div>
         </div>
       </div>
