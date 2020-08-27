@@ -1,25 +1,30 @@
-<h1>Index</h1>
-
-<br>
-
-<% @cards.each do |card| %>
-  <% unless card.sold %>
-    <div class="index-card">
-      <div class="card-left">
-        <%= cl_image_tag card.photo.key, crop: :fill %>
-      </div>
-      <div class ="card-right">
-        <h1><%= card.name %></h1>
-        <p><strong>Category:</strong> <%= card.category %></p>
-        <p><strong>Description:</strong> <%= card.description %></p>
-        <p><strong>Price:</strong> <%= card.price %></p>
-        <p><strong>Seller:</strong> <%= card.user.username %></p>
-        <p><%= link_to "See Card's details", card_path(card), class: "card-button" %></p>
-      </div>
+<div class="container-index-center">
+  <div>
+    <div class="mt-4">
+      <h1 class="titles"><%= @category %></h1>
     </div>
-  <% end %>
-<% end %>
-<br>
-<div>
-  <%= link_to "Create a new card.", new_card_path, class: "btn btn-secondary" %>
+    <br>
+    <% @cards.each do |card| %>
+      <% unless card.sold %>
+        <div class="index-card">
+          <div class="card-left">
+            <%= cl_image_tag card.photo.key, crop: :fill %>
+          </div>
+          <div class ="card-right">
+            <h1><%= card.name %></h1>
+            <p><strong>Category:</strong> <%= card.category %></p>
+            <p><strong>Description:</strong> <%= card.description %></p>
+            <p><strong>Price:</strong> <%= card.price %></p>
+            <p><strong>Seller:</strong> <%= card.user.username %></p>
+            <p><%= link_to "See Card's details", card_path(card), class: "card-button" %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <br>
+    <div class="container button-position">
+      <%= link_to "Create a new card", new_card_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
 </div>
+

@@ -1,25 +1,31 @@
-<h1>Orders Index</h1>
-
-<br>
-
-<% @orders.each do |order| %>
-
-  <div class="order-card">
-    <div class="card-left">
-      <%= cl_image_tag order.card.photo.key, crop: :fill %>
+<div class="container-index-center">
+  <div>
+    <div class=" mt-4">
+      <h1 class="titles"><%= current_user.username %>'s Orders:</h1>
     </div>
-    <div class ="card-right">
-      <h1>Card Name: <%= order.card.name %></h1>
-      <div>
-        <p>Buyer: <%= order.user.username %></p>
-        <p>Seller: <%= order.card.user.username %></p>
-        <p>Price: <%= order.card.price %></p>
-        <br>
-        <p><%= link_to "See Card's details", card_path(order.card), class: "card-button" %></p>
+
+    <br>
+    <% @orders.each do |order| %>
+
+      <div class="index-card">
+        <div class="card-left">
+          <%= cl_image_tag order.card.photo.key, crop: :fill %>
+        </div>
+        <div class ="card-right">
+          <h1>Card Name: <%= order.card.name %></h1>
+          <div>
+            <p>Buyer: <%= order.user.username %></p>
+            <p>Seller: <%= order.card.user.username %></p>
+            <p>Price: <%= order.card.price %></p>
+            <br>
+            <p><%= link_to "See Card's details", card_path(order.card), class: "card-button" %></p>
+          </div>
+        </div>
       </div>
+    <% end %>
+    <div class="container button-position">
+      <%= link_to "Back to cards", cards_path, class: "btn btn-secondary" %>
     </div>
   </div>
-<% end %>
+</div>
 
-
-<%= link_to "Back to cards", cards_path %>
