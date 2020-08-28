@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 require "open-uri"
 
 
@@ -15,6 +14,7 @@ User.destroy_all
 
 
 puts "Start"
+
 
 
 5.times do
@@ -40,7 +40,7 @@ puts "Start"
     file = URI.open('https://source.unsplash.com/600x600/?superhero')
     card = Card.new(
       name: Faker::Games::Pokemon.name,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. ",
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. ',
       category: ['Magic', 'Pokemon', 'Yu-Gi-Oh'].sample,
       price: rand(1..100),
       user: user
@@ -50,5 +50,4 @@ puts "Start"
   end
 end
 
-
-puts "Finish"
+puts 'Finish'
