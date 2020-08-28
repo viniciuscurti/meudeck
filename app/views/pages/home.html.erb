@@ -12,7 +12,7 @@
       <div class="card-body">
         <h1 class="card-title"><%= card.name %></h1>
           <p class="card-text"><strong>Category: </strong><%= card.category %></p>
-          <p class="card-text"><strong>Price:</strong> <%= card.price %></p>
+          <p class="card-text"><strong>Price:</strong> <%= humanized_money_with_symbol(card.price_cents) %></p>
         <%= link_to "See Card's details", card_path(card), class: "card-button card-home-button-position" %>
       </div>
     </div>

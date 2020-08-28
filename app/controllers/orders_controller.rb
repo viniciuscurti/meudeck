@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
       line_items: [{
         name: card.sku,
         images: [card.photo.key],
-        amount: card.price_cents,
+        amount: card.price_cents * 100,
         currency: 'brl',
         quantity: 1
       }],
