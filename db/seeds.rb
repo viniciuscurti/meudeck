@@ -5,12 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
 
-require 'open-uri'
+
 Order.destroy_all
 Card.destroy_all
 User.destroy_all
-puts 'Start'
+
+
+puts "Start"
+
+
+
 5.times do
   sleep(1)
   file = URI.open('https://source.unsplash.com/300x300/?face')
@@ -28,6 +34,7 @@ puts 'Start'
   )
   user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   user.save!
+
   5.times do
     sleep(1)
     file = URI.open('https://source.unsplash.com/600x600/?superhero')
@@ -42,4 +49,5 @@ puts 'Start'
     card.save!
   end
 end
+
 puts 'Finish'
