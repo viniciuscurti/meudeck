@@ -22,12 +22,12 @@ class OrdersController < ApplicationController
         currency: 'brl',
         quantity: 1
       }],
-      success_url: "http://localhost:3000/cards/#{card.id}/orders/#{order.id}",
-      cancel_url: "http://localhost:3000/cards/#{card.id}/orders/#{order.id}"
+      success_url: "http://localhost:3000/orders/#{order.id}",
+      cancel_url: "http://localhost:3000/orders/#{order.id}"
     )
 
     order.update(checkout_session_id: session.id)
-    redirect_to new_card_order_payment_path(card, order)
+    redirect_to new_order_payment_path(order)
   end
 
   private
