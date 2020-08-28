@@ -6,7 +6,8 @@
 <%= f.input :description %>
 <%= f.input :price_cents %>
 <%= f.input :photo, as: :file %>
-<%= f.submit 'Submit', class: 'btn-primary' %>
+<div>
+<%= f.submit 'Submit', class: 'btn btn-primary' %>
 <% end %>
-
 <%= link_to "Back to card", card_path(@card), class: "btn btn-primary" %>
+</div>

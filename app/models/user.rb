@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true, length: { maximum: 15 } 
   validates :address, presence: true
   validates :address_number, presence: true, length: { maximum: 6 } ,numericality: { only_integer: true }
-  validates :address_number, presence: true, length: { maximum: 10 }
+  validates :address_number, presence: true, length: { maximum: 10 },numericality: { only_integer: true }
   validates :city, presence: true
   validates :country, presence: true   
   validates :zip_code, presence: true, length: { maximum: 9 }
