@@ -12,7 +12,7 @@
       <div>
         <p>Category: <%= @card.category %></p><br>
         <p>Description: <%= @card.description %></p><br>
-        <p>Price: <%= humanized_money_with_symbol(@card.price) %></p>
+        <p>Price: <%= humanized_money_with_symbol(@card.price_cents) %></p>
       </div>
       <div class="align-self-end mr-3">
         <% if current_user == @card.user %>
