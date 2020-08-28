@@ -35,6 +35,7 @@ gem 'devise'
 gem 'cloudinary', '~> 1.16.0'
 gem 'money-rails'
 gem 'stripe'
+gem 'stripe_event'
 
 group :development, :test do
   gem 'pry-byebug'
