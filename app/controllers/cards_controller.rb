@@ -50,7 +50,7 @@ class CardsController < ApplicationController
     redirect_to cards_path, notice: "card was successfully deleted"
   end
 
-private
+  private
 
   def set_card
     @card = Card.find(params[:id])
