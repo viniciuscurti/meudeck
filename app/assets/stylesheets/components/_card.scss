@@ -113,7 +113,8 @@
   overflow:hidden;
   background:transparent;
   img {
-    width: auto;
+    width: 100%;
+    object-fit: cover;
     height: 320px;
     border-radius:10px 0 0 10px;
     -webkit-border-radius:10px 0 0 10px;
@@ -177,16 +178,6 @@
       -webkit-transition-duration: .5s;
       transition-duration: .5s;
     }
-    .cards-button-position-one {
-      position: absolute;
-      right: 432px;
-      top: 443px;
-    }
-    .cards-button-position-two {
-      position: absolute;
-      right: 570px;
-      top: 443px;
-  }
 }
 
 h1 {
@@ -200,3 +191,75 @@ h1 {
   letter-spacing:1px;
 }
 
+.cards-rights {
+  width:33%;
+  text-align: center;
+  float:left;
+  background: #1B272C;
+  // height:180%;
+  border-radius:0 10px 10px 0;
+  -webkit-border-radius:0 10px 10px 0;
+  -moz-border-radius:0 10px 10px 0;
+  h1 {
+    color:#D6E1EF;
+    font-family: 'Beleren Bold';
+    font-weight:400;
+    text-align:center;
+    font-size:40px;
+    margin:30px 0 0 0;
+    padding:0 0 0 40px;
+    letter-spacing:1px;
+  }
+  p {
+    color:#c2c2c2;
+    font-family: 'Montserrat', sans-serif;
+    font-size:18px;
+    padding:0 40px 0 40px;
+    letter-spacing:1px;
+    margin-top: 40%;
+    margin:10px 0 10px 0;
+    line-height:20px;
+    }
+  .cards-button {
+    color:#ffda00;
+    text-decoration:none;
+    font-family: 'Montserrat', sans-serif;
+    border:2px solid #ffda00;
+    padding:10px 10px 10px 40px;
+    font-size:12px;
+    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/COMdoWZ.png);
+    background-size:12px 12px;
+    background-repeat:no-repeat;
+    background-position: 7% 50%;
+    border-radius:5px;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    }
+    .cards-button:hover {
+      color: #000000;
+      background-color: #ffda00;
+      background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/rFQ5dHA.png);
+      background-size:12px 12px;
+      background-repeat:no-repeat;
+      background-position: 10% 50%;
+      cursor: pointer;
+      -webkit-transition-property: all;
+      transition-property: all;
+      -webkit-transition-duration: .5s;
+      transition-duration: .5s;
+    }
+    .cards-button-position-one {
+      position: absolute;
+      right: 432px;
+      top: 443px;
+    }
+
+    .cards-buttons-position-two {
+      position: absolute;
+      right: 312px;
+      top: 443px;
+  }
+  
+}

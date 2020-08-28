@@ -7,17 +7,20 @@
     <div class="cards-left">
       <%= cl_image_tag @card.photo.key, crop: :fill %>
     </div>
-    <div class ="cards-right">
+    <div class ="cards-right d-flex justify-content-between flex-column pb-3">
       <h1><%= @card.name %></h1><br>
       <div>
         <p>Category: <%= @card.category %></p><br>
         <p>Description: <%= @card.description %></p><br>
         <p>Price: <%= humanized_money_with_symbol(@card.price) %></p>
-        <%# <p>Username: <%= @card.user.username</p> %>
+      </div>
+      <div class="align-self-end mr-3">
         <% if current_user == @card.user %>
-          <p><%= link_to "Edit card", edit_card_path, class: "cards-button" %></p>
-          <p><%= link_to "Delete card", card_path(@card), method: :delete, data: { confirm: 'Are you sure?' }, class: "cards-button" %></p>
-          <p><%= link_to "Back to cards", cards_path, class: "cards-button" %></p>
+          <div>
+            <%= link_to "Edit card", edit_card_path, class: "cards-button" %>
+            <%= link_to "Delete card", card_path(@card), method: :delete, data: { confirm: 'Are you sure?' }, class: "cards-button" %>
+            <%= link_to "Back to cards", cards_path, class: "cards-button" %>
+          </div>
         <% elsif current_user == nil %>
           <p><%= link_to "Back to cards", cards_path, class: "cards-button" %></p>
         <% else %>
@@ -25,8 +28,6 @@
             <%= hidden_field_tag 'card_id', @card.id %>
             <div>
               <%= submit_tag 'Purchase', class: "cards-button cards-button-position-one" %>
-            </div>
-            <div>
               <%= link_to "Back to cards", cards_path, class: "cards-button cards-button-position-two" %>
             </div>
           <% end %>
