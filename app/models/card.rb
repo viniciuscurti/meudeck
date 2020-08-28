@@ -5,6 +5,7 @@ class Card < ApplicationRecord
   validates :photo, presence: true
   after_create :set_sku
   monetize :price_cents
+  validates :price_cents, presence: true
 
   def set_sku
     self.update( sku: "#{self.id}-#{self.name.parameterize}")
