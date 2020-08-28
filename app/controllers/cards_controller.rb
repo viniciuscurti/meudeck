@@ -49,14 +49,14 @@ class CardsController < ApplicationController
     @card.destroy
     redirect_to cards_path, notice: "card was successfully deleted"
   end
-end
 
 private
 
-def set_card
-  @card = Card.find(params[:id])
-end
+  def set_card
+    @card = Card.find(params[:id])
+  end
 
-def card_params
-  params.require(:card).permit(:category, :name, :description, :price, :photo)
+  def card_params
+    params.require(:card).permit(:category, :name, :description, :price, :photo)
+  end
 end
