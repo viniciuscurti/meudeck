@@ -27,8 +27,56 @@
   }
 }
 
-.button-position {
+.index-button-position {
   display: flex;
   align-items: flex-start;
   width: 100%;
+}
+
+.card-button {
+  color:#ffda00;
+  text-decoration:none;
+  font-family: 'Montserrat', sans-serif;
+  border:2px solid #ffda00;
+  padding:10px 10px 10px 40px;
+  font-size:12px;
+  background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/COMdoWZ.png);
+  background-size:12px 12px;
+  background-repeat:no-repeat;
+  background-position: 7% 50%;
+  border-radius:5px;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+  &:hover {
+    color: #000000;
+    background-color: #ffda00;
+    background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/rFQ5dHA.png);
+    background-size:12px 12px;
+    background-repeat:no-repeat;
+    background-position: 10% 50%;
+    cursor: pointer;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+  }
+}
+.card-button-position-one {
+  position: absolute;
+  right: 221px;
+  bottom: 33px;
+}
+
+.card-button-position-two {
+  position: absolute;
+  right: 50px;
+  bottom: 33px;
+}
+
+.card-home-button-position {
+  position: absolute;
+  right: 50px;
+  bottom: 33px;
 }
