@@ -1,8 +1,13 @@
 .carousel{
   // box-shadow: 0px 0px 60px 40px rgb(141, 24, 24) inset;
   box-shadow: 0px 0px -60px -40px black inset;
-}
-
-.carousel-caption-d-none-d-md-block{
-  color: grey; 
+  margin-top: -24px;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  h1 {
+    font-family: 'Beleren Bold';
+    font-weight:400;
+    color: lightgrey;
+  }
 }
