@@ -16,7 +16,7 @@
               <div class ="card-right">
                 <h1><%= card.name %></h1>
                 <p><strong>Category:</strong> <%= card.category %></p>
-                <p><strong>Price:</strong> <%= humanized_money_with_symbol(card.price) %></p>
+                <p><strong>Price:</strong> <%= humanized_money_with_symbol(card.price_cents) %></p>
                 <p><strong>Seller:</strong> <%= card.user.username %></p>
                 <p><%= link_to "See Card's details", card_path(card), class: "card-button card-button-position-two" %></p>
               </div>
