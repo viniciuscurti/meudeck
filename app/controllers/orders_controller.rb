@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = current_user.orders.find(current_user.id)
+    @order = current_user.orders.find(params[:id])
   end
 
   def create
@@ -22,8 +22,8 @@ class OrdersController < ApplicationController
         currency: 'brl',
         quantity: 1
       }],
-      success_url: "http://localhost:3000/orders/#{order.id}",
-      cancel_url: "http://localhost:3000/orders/#{order.id}"
+      success_url: "https://meudeck.herokuapp.com/orders/#{order.id}",
+      cancel_url: "https://meudeck.herokuapp.com/orders/#{order.id}"
     )
 
     order.update(checkout_session_id: session.id)
