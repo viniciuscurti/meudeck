@@ -1,4 +1,5 @@
 <%= render "shared/banner" %>
+
 <div>
   <h1 class="titles">Last cards added</h1>
 </div>
@@ -10,9 +11,9 @@
       <%= cl_image_tag card.photo.key, crop: :fill, class: "card-photo" %>
       <div class="card-body">
         <h1 class="card-title"><%= card.name %></h1>
-          <p class="card-text"><strong><%= card.category %></strong></p>
+          <p class="card-text"><strong>Category: </strong><%= card.category %></p>
           <p class="card-text"><strong>Price:</strong> <%= card.price %></p>
-        <p><%= link_to "See Card's details", card_path(card), class: "card-button card-home-button-position" %></p>
+        <%= link_to "See Card's details", card_path(card), class: "card-button card-home-button-position" %>
       </div>
     </div>
   <% end %>
