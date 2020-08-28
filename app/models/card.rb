@@ -12,7 +12,6 @@ class Card < ApplicationRecord
 
   def sell!
     self.sold = true
-    # self.user_id = current_user.id
     save
   end
 end
