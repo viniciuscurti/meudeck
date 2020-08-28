@@ -3,7 +3,7 @@
 =======
 .index-card {
   position: relative;
-  width:800px;
+  width:650px;
   height:300px;
   margin-bottom: 20px;
   background:transparent;
@@ -53,9 +53,6 @@
       line-height:20px;
       }
     .card-button {
-      position: absolute;
-      right: 50px;
-      bottom: 50px;
       color:#ffda00;
       text-decoration:none;
       font-family: 'Montserrat', sans-serif;
@@ -84,6 +81,16 @@
         transition-property: all;
         -webkit-transition-duration: .5s;
         transition-duration: .5s;
+      }
+      .card-button-position-one {
+        position: absolute;
+        right: 221px;
+        bottom: 33px;
+      }
+      .card-button-position-two {
+        position: absolute;
+        right: 50px;
+        bottom: 33px;
       }
   }
 }

@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
   def create
     card = Card.find(params[:card_id])
     order = Order.create!(card: card, card_sku: card.sku, amount: card.price, state: 'pending', user: current_user)
-
+    card.sell!
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{

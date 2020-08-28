@@ -11,14 +11,18 @@
           <%= cl_image_tag order.card.photo.key, crop: :fill %>
         </div>
         <div class ="card-right">
-          <h1>Card Name: <%= order.card.name %></h1>
+          <h1><%= order.card.name %></h1>
           <div>
             <p>Buyer: <%= order.user.username %></p>
             <p>Seller: <%= order.card.user.username %></p>
             <p>Price: <%= order.card.price %></p>
             <br>
-            <p><%= link_to "See Card's details", card_path(order.card), class: "card-button" %></p>
-            <p><%= link_to "See Order's details", card_order_path(order.card, order), class: "card-button" %></p>
+            <div>
+              <p><%= link_to "Card's details", card_path(order.card), class: "card-button card-button-position-one" %></p>
+            </div>
+            <div>
+              <p><%= link_to "Order's details", card_order_path(order.card, order), class: "card-button card-button-position-two" %></p>
+            </div>
           </div>
         </div>
       </div>
